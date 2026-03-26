@@ -13,7 +13,7 @@ Wyniki i wykorzystane technologie: dashboard/panel z web mapą, wykresami, wska�
 
 ---
 
-### Interaktywna mapa atrakcji przy Koloseum — Rzym
+### ROMA MAP -  Interaktywna mapa atrakcji przy Koloseum — Rzym
 **Autorka:** Agata Ćwikła | **2026**
 
 Interaktywna mapa webowa prezentująca punkty gastronomiczne i użytkowe w promieniu 1 km od Koloseum w Rzymie.
