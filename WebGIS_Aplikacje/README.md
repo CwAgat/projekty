@@ -3,7 +3,7 @@
 Interaktywne aplikacje mapowe, mapy i dashboardy 
 ---
 
-### 📊 Dashboard jakości powietrza — PM10, PM2.5, NO2
+### Dashboard jakości powietrza — PM10, PM2.5, NO2
 **Autorki:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
 
 Interaktywny dashboard w ArcGIS Online prezentujący stężenia PM10, PM2.5 i NO2 dla 6 stacji pomiarowych w Polsce.

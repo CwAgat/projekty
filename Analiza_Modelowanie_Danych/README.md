@@ -14,7 +14,7 @@ Wyniki i wykorzystane technologie: wykresy korelacji i klimatogramy, `R`(`ggplot
 
 ---
 
-### 🌫️ Analiza zmienności zanieczyszczenia powietrza PM2.5 w Krakowie
+### Analiza zmienności zanieczyszczenia powietrza PM2.5 w Krakowie
 **Autorki:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
 
 Analiza przestrzenna stężeń PM2.5 w Krakowie na podstawie danych z czujników Airly pobranych przez API udostępniane przez firme Airly dla wybranych godzin w weekend i dni robocze (styczeń 2026).
@@ -24,7 +24,7 @@ Wyniki i wykorzystane technologie: mapy predykcji stężeń i temperatury z ocen
 
 ---
 
-### 🧊 Modelowanie zmian zasięgu pokrywy lodowej — biegun południowy
+### Modelowanie zmian zasięgu pokrywy lodowej — biegun południowy
 **Autorki:** Agata Ćwikła, Zofia Gil | **2025**
 
 Analiza i modelowanie zmian zasięgu lodu morskiego wokół Antarktydy w latach 1978–2009.
@@ -34,7 +34,7 @@ Wyniki i wykorzystane technologie: animacja czasoprzestrzenna zasięgu lodu.
 
 ---
 
-### 🔬 Analiza_obrazow_zawartosc_mineralow
+### Analiza_obrazow_zawartosc_mineralow
 **Autorka:** Agata Ćwikła | **2026**
 **Temat:** Analiza zawartości minerałów w piaskowcu godulskim
 
