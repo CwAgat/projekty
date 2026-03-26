@@ -1,0 +1,141 @@
+---
+title: "Amenities within 1km of the Colosseum"
+author: "Agata Ćwikła"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r lib, warning=FALSE, message=FALSE}
+library("httr")
+library("jsonlite")
+library("sf")
+library("leaflet")
+library("dplyr")
+```
+
+```{r, cache=TRUE}
+query <- '
+[out:json][timeout:25];
+(
+  node["amenity"="restaurant"](around:1000, 41.8902, 12.4922);
+  node["amenity"="bar"](around:1000, 41.8902, 12.4922);
+  node["amenity"="fast_food"](around:1000, 41.8902, 12.4922);
+  node["amenity"="cafe"](around:1000, 41.8902, 12.4922);
+  node["amenity"="ice_cream"](around:1000, 41.8902, 12.4922);
+  node["amenity"="drinking_water"](around:1000, 41.8902, 12.4922);
+);
+out body;
+'
+
+#chcemy odpoweidz w formacie json
+#30 sekund na odpowiedz po tym czasie timeout
+
+odpowiedz <- POST(
+  url = "https://overpass-api.de/api/interpreter",
+  body = query
+)
+
+status_code(odpowiedz)
+
+```
+```{r}
+#zamiana odpowiedzi na tekst, parsowanie JSONA
+zawartosc <- content(odpowiedz, as = "text", encoding = "UTF-8")
+dane <- fromJSON(zawartosc)
+
+names(dane) #"version" - wersja api   "generator" - info o serwerze "osm3s" - metadane zapytania     "elements" - tu są dane
+#names(dane$elements$tags) 
+
+df <- data.frame(
+  lat     = dane$elements$lat,
+  lon     = dane$elements$lon,
+  amenity = dane$elements$tags$amenity,
+  name    = dane$elements$tags$name,
+  cuisine = dane$elements$tags$cuisine
+)
+
+# Podgląd
+head(df)
+```
+
+```{r}
+df_restauracja <- df |> filter(amenity == "restaurant") |> filter(!is.na(lat), !is.na(lon))
+df_cafe        <- df |> filter(amenity == "cafe")        |> filter(!is.na(lat), !is.na(lon))
+df_bar         <- df |> filter(amenity == "bar")         |> filter(!is.na(lat), !is.na(lon))
+df_fastfood    <- df |> filter(amenity == "fast_food")   |> filter(!is.na(lat), !is.na(lon))
+df_woda        <- df |> filter(amenity == "drinking_water") |> filter(!is.na(lat), !is.na(lon))
+df_ice_cream   <- df |> filter(amenity == "ice_cream")   |> filter(!is.na(lat), !is.na(lon))
+```
+
+```{r}
+bar <- makeIcon(iconUrl = "beztla/2.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+cafe <- makeIcon(iconUrl = "beztla/3.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+restaurant <- makeIcon(iconUrl = "beztla/6.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+water <- makeIcon(iconUrl = "beztla/1.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+fast_food <- makeIcon(iconUrl = "beztla/4.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+ice_cream <- makeIcon(iconUrl = "beztla/5.png", iconWidth = 20, iconHeight = 20, iconAnchorX = 5, iconAnchorY = 5)
+coloseum <- makeIcon(iconUrl = "coloseum-removebg-preview.png", iconWidth = 150, iconHeight = 150, iconAnchorX = 0, iconAnchorY = 0)
+```
+
+
+```{r}
+leaflet() |>
+  addProviderTiles(providers$Esri.WorldStreetMap, group = "Esri World Street Map") |>
+  addProviderTiles(providers$Esri.WorldImagery , group = "Esri World Imagery ", options = providerTileOptions(opacity = 0.6)) |>
+  setView(lng = 12.4922, lat = 41.8902, zoom = 15) |>
+  addMarkers(
+    data = df_restauracja, lng = ~lon, lat = ~lat,
+    group = "Restauracje", icon = restaurant,
+    popup = ~paste0(
+    "<b>", ifelse(is.na(name), "Bez nazwy", paste0("Nazwa: ", name)), "</b><br>",
+    "restauracja<br>",
+    ifelse(is.na(cuisine), "", cuisine))
+  ) |>
+  addMarkers(
+    data = df_cafe, lng = ~lon, lat = ~lat,
+    group = "Kawiarnie", icon = cafe,
+    popup = ~paste0("<b>", ifelse(is.na(name), "Bez nazwy", paste0("Nazwa: ", name)), "</b><br>kawiarnia")
+  ) |>
+  addMarkers(
+    data = df_bar, lng = ~lon, lat = ~lat,
+    group = "Bary", icon = bar,
+    popup = ~paste0("<b>", ifelse(is.na(name), "Bez nazwy", paste0("Nazwa: ", name)), "</b><br>bar")
+  ) |>
+  addMarkers(
+    data = df_fastfood, lng = ~lon, lat = ~lat,
+    group = "Fast food", icon = fast_food,
+    popup = ~paste0("<b>", ifelse(is.na(name), "Bez nazwy", paste0("Nazwa: ", name)), "</b><br>fast food")
+  ) |>
+  addMarkers(
+    data = df_woda, lng = ~lon, lat = ~lat,
+    group = "Woda pitna", icon = water,
+    popup = ~paste0(ifelse(is.na(name), "", name), "woda pitna")
+  ) |>
+  addMarkers(
+    data = df_ice_cream, lng = ~lon, lat = ~lat,
+    group = "Lody", icon = ice_cream,
+    popup = ~paste0("<b>", ifelse(is.na(name), "Bez nazwy", paste0("Nazwa: ", name)), "</b><br>lody")
+  ) |>
+  addMarkers(
+    lng = 12.4922, lat = 41.8902,
+    group = "Koloseum", icon = coloseum,
+    popup = "<b>Koloseum</b><br>Amfiteatr Flawiuszów"
+  ) |>
+  addLayersControl(
+    baseGroups = c("Esri World Street Map","Esri World Imagery"),
+    overlayGroups = c("Restauracje", "Kawiarnie", "Bary", "Fast food", "Woda pitna", "Lody"),
+    options = layersControlOptions(collapsed = TRUE)
+  ) |>
+  addLegend(
+    position = "bottomright",
+    colors = c("#c268ff", "#ff487c", "#ea7300", "#9da200", "#00b78f", "#04abe1"),
+    labels = c("Kawiarnie", "Bary", "Fast food", "Restauracje", "Lody", "Woda pitna"),
+    
+    title = "Kategoria",
+    opacity = 0.8
+  )
+```
+
