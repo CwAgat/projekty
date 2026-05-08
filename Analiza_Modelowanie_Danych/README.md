@@ -10,7 +10,7 @@ Projekty zaliczeniowe z zakresu analizy danych środowiskowych i przestrzennych 
 
 Analiza zależności między warunkami klimatycznymi a przyrostem rocznym modrzewia europejskiego w trzech lokalizacjach na Litwie (dane NOAA + CRU TS, lata 1901–2006).
 Zastosowano analizę korelacji stacjonarnej i ruchomej oraz analizę punktów zmian.
-Wyniki i wykorzystane technologie: wykresy korelacji i klimatogramy, `R`(`ggplot2` , `dplR`) · `ArcGIS Pro`, `LateX`
+Wyniki i wykorzystane technologie: wykresy korelacji i klimatogramy, `R`(`ggplot2` , `dplyR`) · `ArcGIS Pro`, `LateX`
 
 ---
 
