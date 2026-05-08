@@ -20,5 +20,6 @@ Interaktywna mapa webowa prezentująca punkty gastronomiczne i użytkowe w promi
 Dane pobierane w czasie rzeczywistym z OpenStreetMap przez Overpass API, przetworzone w R i zwizualizowane w Leaflet z podziałem na kategorie (restauracje, kawiarnie, bary, fast food, lody, woda pitna).
 Wyniki i wykorzystane technologie: responsywna mapa HTML z niestandardowymi ikonami, pop-upami, przełączaniem warstw i legendą.
 `R` · `Leaflet` · `OpenStreetMap` · `Overpass API` · `RMarkdown` · `httr` · `jsonlite`
+(aby wyświetlić mapę należy pobrać i otworzyć plik z rozszerzeniem .html)
 
 ---
