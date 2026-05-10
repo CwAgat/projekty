@@ -1,6 +1,19 @@
-## Layouty i Wydruki Mapowe
+## Layouty, Wizualizacje i Wydruki Mapowe
 
 ---
+### Dashboard Geowizualizacje — Gapminder, Rzym, Ararat
+**Autorka:** Agata Ćwikła | **2026**
+
+Interaktywny dashboard zbudowany w R (flexdashboard) łączący cztery typy wizualizacji danych.
+
+Dane socjoekonomiczne pochodzą z pakietu gapminder (PKB per capita i oczekiwana długość życia, 1952–2007); dane przestrzenne pobrano z OpenStreetMap przez Overpass API; model terenu wygenerowano z danych NASA SRTM GL1.
+
+Wyniki i wykorzystane technologie: wykresy ggplot2 i subploty boxplotowe (patchwork), animowany wykres bąbelkowy plotly z trajektoriami wybranych krajów, interaktywna mapa leaflet z punktami gastronomicznymi wokół Koloseum oraz trójwymiarowy model terenu góry Ararat w rayshaderze.
+
+`R` · `flexdashboard` · `ggplot2` · `plotly` · `leaflet` · `rayshader` · `NASA SRTM` · `OpenStreetMap`
+
+---
+
 
 ### Szczegółowa Mapa Geologiczna — arkusz „Rzeki" (Szczawa)
 **Autorki:** Agata Ćwikła, Zuzanna Chaniewska, Zuzanna Dybcio, Zofia Gil, Maria Gąsiorowska | **2025**
