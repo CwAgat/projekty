@@ -4,6 +4,14 @@
 
 Interaktywne aplikacje mapowe, mapy i dashboardy 
 
+### Wyszukiwarka toalet publicznych — Kraków
+**Autorka:** Agata Ćwikła | **2026**
+
+Interaktywna aplikacja webowa w ArcGIS Experience Builder umożliwiająca szybkie znalezienie najbliższej toalety publicznej w Krakowie.
+Dane o toaletach publicznych pobrano z Miejskiego Systemu Informacji (MSI) Krakowa; własna mapa bazowa przygotowana w Vector Tile Style Editor.
+Wyniki i wykorzystane technologie: mapa z filtrowaniem atrybutowym, legendą i przełączaniem map bazowych; interakcje między widgetami (filter → mapa).
+`ArcGIS Experience Builder` · `ArcGIS Online` · `Vector Tile Style Editor` · `MSI Kraków`
+
 ### Dashboard jakości powietrza — PM10, PM2.5, NO2
 **Autorki:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
 
@@ -28,6 +36,12 @@ Wyniki i wykorzystane technologie: responsywna mapa HTML z niestandardowymi ikon
 ## WebGIS and Map Applications
 Interactive map applications, maps and dashboards.
 
+### Public Toilet Finder — Kraków
+**Author:** Agata Ćwikła | **2026**
+Interactive web application built in ArcGIS Experience Builder for quickly locating the nearest public toilet in Kraków.
+Data on public toilets sourced from the Municipal Information System (MSI) of Kraków; custom basemap prepared in Vector Tile Style Editor.
+Results and technologies used: map with attribute filtering, legend and basemap switching; interactions between widgets (filter → map).
+`ArcGIS Experience Builder` · `ArcGIS Online` · `Vector Tile Style Editor` · `MSI Kraków`
 
 ### Dashboard jakości powietrza - PM10, PM2.5, NO2
 **Authors:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
