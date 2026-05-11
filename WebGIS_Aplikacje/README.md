@@ -11,6 +11,8 @@ Interaktywna aplikacja webowa w ArcGIS Experience Builder umożliwiająca szybki
 Dane o toaletach publicznych pobrano z Miejskiego Systemu Informacji (MSI) Krakowa; własna mapa bazowa przygotowana w Vector Tile Style Editor.
 Wyniki i wykorzystane technologie: mapa z filtrowaniem atrybutowym, legendą i przełączaniem map bazowych; interakcje między widgetami (filter → mapa).
 `ArcGIS Experience Builder` · `ArcGIS Online` · `Vector Tile Style Editor` · `MSI Kraków`
+[link do aplikacji](https://experience.arcgis.com/experience/16d88a2b2c954567aa50201cc5322feb)
+
 
 ### Dashboard jakości powietrza — PM10, PM2.5, NO2
 **Autorki:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
@@ -42,6 +44,7 @@ Interactive web application built in ArcGIS Experience Builder for quickly locat
 Data on public toilets sourced from the Municipal Information System (MSI) of Kraków; custom basemap prepared in Vector Tile Style Editor.
 Results and technologies used: map with attribute filtering, legend and basemap switching; interactions between widgets (filter → map).
 `ArcGIS Experience Builder` · `ArcGIS Online` · `Vector Tile Style Editor` · `MSI Kraków`
+[link to app](https://experience.arcgis.com/experience/16d88a2b2c954567aa50201cc5322feb)
 
 ### Dashboard jakości powietrza - PM10, PM2.5, NO2
 **Authors:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2026**
