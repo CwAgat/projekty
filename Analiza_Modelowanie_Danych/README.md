@@ -5,6 +5,9 @@
 Projekty zaliczeniowe z zakresu analizy danych środowiskowych i przestrzennych - AGH Kraków, kierunek Geoinformatyka.
 
 ---
+### Preprocessing zbioru danych Cars
+**Autorki:** Zuzanna Chaniewska, Agata Ćwikła | 2026
+Preprocessing zbioru danych cars dotyczącego parametrów samochodów osobowych z lat 1971–1983. Przeprowadzono poprawę typów danych, ujednolicenie wartości kategorycznych, usunięcie wartości sprzecznych z logiką, eliminację wartości ekstremalnych metodą 1,5 × IQR oraz grupową imputację brakujących wartości medianą. Końcowy zbiór 261 obserwacji jest wolny od braków danych i gotowy do budowy modeli predykcyjnych. `R` · `tidyverse` · `dplyr` · `ggplot2` · `stringr` · `tidyr`
 
 ### Analiza_korelacji_przyrost_modrzewia
 **Autorki:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2025**
@@ -55,6 +58,11 @@ Wyniki i wykorzystane technologie: obraz wynikowy z wydzielonymi minerałami i z
 Data analysis and modelling projects in the field of environmental and spatial data - AGH Kraków, Geoinformatics.
 
 ---
+
+### Cars Dataset Preprocessing
+**Authors:** Agata Ćwikła, Zuzanna Chaniewska | 2026
+Preprocessing of the cars dataset containing specifications of passenger vehicles from 1971–1983. The pipeline included data type correction, standardisation of categorical values, removal of logically invalid entries, outlier detection using the 1.5 × IQR method, and group-wise median imputation of missing values. The final dataset of 261 observations contains no missing values and is ready for predictive modelling. `R` · `tidyverse` · `dplyr` · `ggplot2` · `stringr` · `tidyr`
+
 
 ### Analiza_korelacji_przyrost_modrzewia
 **Authors:** Agata Ćwikła, Zofia Gil, Joanna Heyda | **2025**
